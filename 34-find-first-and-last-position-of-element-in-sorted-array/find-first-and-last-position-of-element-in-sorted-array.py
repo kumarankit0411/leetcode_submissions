@@ -1,8 +1,8 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        return [self.fo(nums, target), self.lo(nums, target)]
+        return [self.ocurrence(nums, target, True), self.ocurrence(nums, target, False)]
         
-    def fo(self, nums, target):
+    def ocurrence(self, nums, target, first):
         l = 0
         r = len(nums) - 1
         ans = -1
@@ -12,7 +12,10 @@ class Solution:
 
             if nums[m] == target:
                 ans = m
-                r = m - 1
+                if first:
+                    r = m - 1
+                else:
+                    l = m + 1
             elif nums[m] < target:
                 l = m + 1
             else:
@@ -20,20 +23,20 @@ class Solution:
         
         return ans
 
-    def lo(self, nums, target):
-        l = 0
-        r = len(nums) - 1
-        ans = -1
+    # def lo(self, nums, target):
+    #     l = 0
+    #     r = len(nums) - 1
+    #     ans = -1
 
-        while l<=r:
-            m = l + (r-l)//2
+    #     while l<=r:
+    #         m = l + (r-l)//2
 
-            if nums[m] == target:
-                ans = m
-                l = m + 1
-            elif nums[m] < target:
-                l = m + 1
-            else:
-                r = m - 1
+    #         if nums[m] == target:
+    #             ans = m
+    #             l = m + 1
+    #         elif nums[m] < target:
+    #             l = m + 1
+    #         else:
+    #             r = m - 1
         
-        return ans
+    #     return ans
