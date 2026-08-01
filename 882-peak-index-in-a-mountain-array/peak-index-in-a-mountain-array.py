@@ -8,8 +8,8 @@ class Solution:
         while l!=m:
             m = l + (r - l)//2
 
-            if(m == n - 1):
-                return m
+            if(m == r):
+                return r
             if arr[m+1] < arr[m]:
                 r = m
             else:
