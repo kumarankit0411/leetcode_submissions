@@ -47,14 +47,8 @@ class Solution:
             if sorted_arr[m][0] < end:
                 l = m + 1
             elif sorted_arr[m][0] == end:
-                # if ignore_index == sorted_arr[m][1]:
-                #     r = m - 1
-                # else:
                 return sorted_arr[m][1]
             else:
-                # if ignore_index == sorted_arr[m][1]:
-                #     r = m - 1
-                # else:
                 if l == r:
                     return sorted_arr[m][1]
                 r = m
