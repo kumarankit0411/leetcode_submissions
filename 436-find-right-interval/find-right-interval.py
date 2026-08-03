@@ -24,33 +24,48 @@ class Solution:
         # return res
 
         ## optimal O(nlogn)
-        arr = []
-        res = []
-        for i in range(len(intervals)):
-            arr.append([intervals[i][0], i])
+        # arr = []
+        # res = []
+        # for i in range(len(intervals)):
+        #     arr.append([intervals[i][0], i])
         
-        arr.sort()
+        # arr.sort()
 
-        for i in range(len(intervals)):
-            res.append(self.findNext(arr, i, intervals[i][1]))
+        # for i in range(len(intervals)):
+        #     res.append(self.findNext(arr, i, intervals[i][1]))
         
+        # return res
+
+    # def findNext(self, sorted_arr, ignore_index, end):
+    #     l = 0
+    #     r = len(sorted_arr) - 1
+    #     m = -1
+
+    #     while(l<=r):
+    #         m = l + (r-l)//2
+
+    #         if sorted_arr[m][0] < end:
+    #             l = m + 1
+    #         elif sorted_arr[m][0] == end:
+    #             return sorted_arr[m][1]
+    #         else:
+    #             if l == r:
+    #                 return sorted_arr[m][1]
+    #             r = m
+    #     return -1
+
+        ## optimal and precise:
+        starts = sorted([interval[0], i] for i, interval in enumerate(intervals))
+
+        res = []
+        for start, end in intervals:
+            idx = bisect.bisect_left(starts, [end, -1])
+
+            if idx < len(starts):
+                res.append(starts[idx][1])
+            else:
+                res.append(-1)
+
         return res
 
-    def findNext(self, sorted_arr, ignore_index, end):
-        l = 0
-        r = len(sorted_arr) - 1
-        m = -1
-
-        while(l<=r):
-            m = l + (r-l)//2
-
-            if sorted_arr[m][0] < end:
-                l = m + 1
-            elif sorted_arr[m][0] == end:
-                return sorted_arr[m][1]
-            else:
-                if l == r:
-                    return sorted_arr[m][1]
-                r = m
-        return -1
-
+        
