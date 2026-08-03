@@ -12,7 +12,6 @@ class Solution:
 
         i = max(position - 1, 0)
         j = position
-        print(position)
 
         while(k>0):
             i_distance = abs(arr[i] - x)
