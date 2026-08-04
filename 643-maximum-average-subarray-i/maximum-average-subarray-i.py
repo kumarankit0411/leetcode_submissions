@@ -3,17 +3,14 @@ class Solution:
         i = 0
         j = k
         n = len(nums)
-        f_sum = sum(nums[i:j])
-        max_avg = f_sum/k
-        if k == n:
-            return max_avg
+        sums = sum(nums[i:j])
+        max_sum = sums
 
         while j < n:
-            f_sum = (f_sum - nums[i] + nums[j])
-            new_avg = f_sum / k
-            if new_avg > max_avg:
-                max_avg = new_avg
+            sums = (sums - nums[i] + nums[j])
+            if sums > max_sum:
+                max_sum = sums
             i+=1
             j+=1
 
-        return max_avg
+        return max_sum/k
