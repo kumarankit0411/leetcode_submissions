@@ -10,7 +10,8 @@ class Solution:
         have = 0
         need = len(t_dict)
 
-        res = ""
+        res_i = -1
+        res_j = -1
         res_len = float('inf')
 
         i = 0
@@ -24,7 +25,8 @@ class Solution:
             while (have == need):
                 if (j-i+1) < res_len:
                     res_len = j - i + 1
-                    res = s[i:j+1]
+                    res_i = i
+                    res_j = j
 
                 left_char = s[i]
                 window_dict[left_char] -=1
@@ -34,4 +36,4 @@ class Solution:
 
                 i+=1
 
-        return res
+        return s[res_i: res_j+1]
