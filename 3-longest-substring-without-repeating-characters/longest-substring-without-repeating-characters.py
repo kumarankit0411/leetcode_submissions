@@ -14,8 +14,6 @@ class Solution:
                 i = pos + 1
 
             s_dict[ord(s[j])] = j
-
-            print(longest)
             if j - i + 1 > longest:
                 longest = j - i + 1
 
