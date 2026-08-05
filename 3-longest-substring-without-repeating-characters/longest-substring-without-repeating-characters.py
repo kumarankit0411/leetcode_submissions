@@ -8,9 +8,10 @@ class Solution:
         longest = -float('inf')
         
         for j in range(len(s)):
-            if s_dict[ord(s[j])] != -1 and s_dict[ord(s[j])] >= i:
+            pos = s_dict[ord(s[j])]
+            if pos != -1 and pos >= i:
                 #duplicate found
-                i = s_dict[ord(s[j])] + 1
+                i = pos + 1
 
             s_dict[ord(s[j])] = j
 
