@@ -9,12 +9,7 @@ class Solution:
         j = 0
         for j in range(len(s)):
             # if s[j] already exist in dict, we found duplicate, increment i
-            if s[j] in s_dict:
-                # end = s_dict[s[j]]
-                # while(i <= end):
-                #     s_dict.pop(s[i], None)
-                #     i+=1
-                if s_dict[s[j]] >= i:
+            if s[j] in s_dict and s_dict[s[j]] >= i:
                     i = s_dict[s[j]] + 1
 
             s_dict[s[j]] = j
