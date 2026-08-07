@@ -6,7 +6,6 @@ class Solution:
 
         while l<=r:
             m = l + (r-l)//2
-
             sqr = m*m
 
             if sqr == x:
@@ -16,7 +15,4 @@ class Solution:
             else:
                 l = m+1
 
-        if m*m > x:
-            return m-1
-        else:
-            return m
+        return r
