@@ -5,13 +5,11 @@ class Solution:
         output = []
 
         for j in range(len(nums)):
-            if q and j - k >= q[0]:
+            while q and j - k >= q[0]:
                 q.popleft()
 
             while q and nums[j] > nums[q[-1]]:
                 q.pop()
-                if not q:
-                    break
             q.append(j)
 
             if j >= k - 1:
