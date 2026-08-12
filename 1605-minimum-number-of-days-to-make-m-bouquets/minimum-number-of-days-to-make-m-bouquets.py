@@ -28,21 +28,28 @@ class Solution:
                 bloomArr[i] = 1
         
         have = 0
-        isContinuous = 0
+        continuous = 0
         for i in range(len(bloomArr)):
-            if i == 0:
-                if bloomArr[i] == 1:
-                    isContinuous = 1
-            elif bloomArr[i] == 1:
-                if bloomArr[i-1] == 1:
-                    isContinuous += 1
-                else:
-                    isContinuous = 1
+            # if i == 0:
+            #     if bloomArr[i] == 1:
+            #         isContinuous = 1
+            # elif bloomArr[i] == 1:
+            #     if bloomArr[i-1] == 1:
+            #         isContinuous += 1
+            #     else:
+            #         isContinuous = 1
+            # else:
+            #     isContinuous = 0
+            # if isContinuous == k:
+            #     have += 1
+            #     isContinuous = 0
+            if bloomArr[i] == 1:
+                continuous +=1
             else:
-                isContinuous = 0
-            if isContinuous == k:
-                have += 1
-                isContinuous = 0
+                continuous = 0
+            if continuous == k:
+                have+=1
+                continuous = 0
         # print(mid, bloomArr, have)
 
         if have >= m:
