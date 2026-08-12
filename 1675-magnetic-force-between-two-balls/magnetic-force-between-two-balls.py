@@ -19,7 +19,6 @@ class Solution:
     def isPossible(self, arr, m, k):
         maxBalls = 1
         currForce = arr[0]
-        i = 0
 
         for j in range(1, len(arr)):
             if abs(currForce - arr[j]) >= m:
