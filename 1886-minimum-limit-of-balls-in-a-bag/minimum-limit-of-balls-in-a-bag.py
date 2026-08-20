@@ -9,7 +9,6 @@ class Solution:
         while l<=r:
             m = (l + r) // 2
 
-            # print(l, m, r)
             if self.isPossible(nums, maxOperations, m):
                 r = m - 1
                 if minPenalty > m:
@@ -25,5 +24,4 @@ class Solution:
             if arr[i]>m:
                 opCount += math.ceil(arr[i]/m) - 1
 
-        print(m, opCount)
         return opCount <= maxop
