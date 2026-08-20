@@ -3,7 +3,6 @@ class Solution:
         l = 1
         r = m * n
         
-
         while l<=r:
             mid = (l + r) // 2
 
@@ -16,7 +15,8 @@ class Solution:
 
     def isPossible(self, m, n, mid, k):
         count = 0
+        
         for i in range(1, m + 1):
             count += min(mid//i, n)
-        print(mid, count)
+        
         return count > k - 1
