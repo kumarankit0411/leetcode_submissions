@@ -15,10 +15,15 @@ class Solution:
         if len(stack) == 0:
             return s
 
+        s_list = list(s)
+        
         for _, idx in stack:
-            s = s[:idx] + '_' + s[idx + 1:]
+            # s = s[:idx] + '_' + s[idx + 1:]
+            s_list[idx] = ''
 
-        s = s.replace('_', '') 
+        s = ''.join(s_list)
+
+        # s = s.replace('_', '') 
 
         print(s)
         return(s)
