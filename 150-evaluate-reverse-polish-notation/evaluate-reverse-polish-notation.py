@@ -15,7 +15,6 @@ class Solution:
         return stack[0]
 
     def evalExpression(self, a, b, op):
-        print(a, b, op)
         a = int(a)
         b = int(b)
         if op == '+':
