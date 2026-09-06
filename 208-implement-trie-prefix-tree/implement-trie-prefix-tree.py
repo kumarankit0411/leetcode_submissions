@@ -11,7 +11,7 @@ class Trie:
         temp = self.root
 
         for ch in word:
-            idx = ord(ch)%97
+            idx = ord(ch)%ord('a')
 
             if temp.children[idx] is None:
                 temp.children[idx] = self.TrieNode()
