@@ -39,13 +39,9 @@ class Solution:
         max_area = 0
 
         for i in range(len(arr)):
-            area = arr[i] * ((nsor[i] - i + 1) + (i - nsol[i] + 1)) - arr[i]
+            area = arr[i] * (nsor[i] - nsol[i] + 1)
 
             if area > max_area:
                 max_area = area
 
-
-        print(nsor)
-        print(nsol)
-        print(max_area)
         return max_area
