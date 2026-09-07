@@ -1,12 +1,11 @@
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
-        new_arr = nums + nums
         n = len(nums)
         res = [-1] * n 
         stack = []
 
-        for i in range(len(new_arr)-1, -1, -1):
-            x = new_arr[i]
+        for i in range(2 * n - 1, -1, -1):
+            x = nums[i%n]
 
             while stack and stack[-1] <= x:
                 stack.pop()
