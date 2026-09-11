@@ -37,8 +37,6 @@ class Solution:
         max_area = 0
 
         for i in matrix:
-            
-
             for j in range(len(i)):
                 if i[j] == '1':
                     heights[j] += 1
