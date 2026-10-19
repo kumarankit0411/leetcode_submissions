@@ -23,7 +23,6 @@
 class NestedIterator:
     def __init__(self, nestedList: [NestedInteger]):
         self.nestedList = nestedList
-        self.idx = -1
         self.stack = []
         self.create_stack()
     
