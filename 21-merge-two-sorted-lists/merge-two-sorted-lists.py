@@ -18,15 +18,9 @@ class Solution:
                 list2 = list2.next
 
         if list1!=None:
-            while list1!=None:
-                temp.next = list1
-                temp = temp.next
-                list1 = list1.next
+            temp.next = list1
         else:
-            while list2!=None:
-                temp.next = list2
-                temp = temp.next
-                list2 = list2.next
+            temp.next = list2
 
 
         return res.next
