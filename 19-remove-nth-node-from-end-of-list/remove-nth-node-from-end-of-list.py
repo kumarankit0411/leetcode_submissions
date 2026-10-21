@@ -5,8 +5,8 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        fast = head
         slow = head
+        fast = head
 
         while n > 0:
             fast = fast.next
@@ -14,7 +14,7 @@ class Solution:
 
         if fast is None:
             return head.next
-
+        
         while fast.next is not None:
             fast = fast.next
             slow = slow.next
@@ -22,3 +22,21 @@ class Solution:
         slow.next = slow.next.next
 
         return head
+    # def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    #     fast = head
+    #     slow = head
+
+    #     while n > 0:
+    #         fast = fast.next
+    #         n-=1
+
+    #     if fast is None:
+    #         return head.next
+
+    #     while fast.next is not None:
+    #         fast = fast.next
+    #         slow = slow.next
+
+    #     slow.next = slow.next.next
+
+    #     return head
