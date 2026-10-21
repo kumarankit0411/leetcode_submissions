@@ -15,8 +15,7 @@ class Solution:
             if fast == None or fast.next==None:
                 return False
             slow = slow.next
-            if fast.next:
-                fast = fast.next.next
+            fast = fast.next.next
             if slow == fast:
                 return True
         
